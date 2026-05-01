@@ -10,20 +10,7 @@ from attacks.brute_force import run_bfs_prefix_search, estimate_attempts, simula
 
 
 GUESS_RATE = 1_000_000_000
-# # Yes, but only in some scenarios.
 
-# 1,000,000,000 guesses per second is not realistic for a normal online login system. It is much too fast for a web app, because real systems have network delay, rate limits, lockouts, and sometimes MFA. For online guessing, the effective rate is usually far lower.
-
-# It can be plausible only in offline attack simulations, where an attacker already has a password hash and is testing guesses on powerful hardware like GPUs or specialized rigs. Even then, 1 billion per second is an aggressive assumption and depends heavily on:
-# - hash type
-# - hardware
-# - password length
-# - implementation quality
-
-# So in your app, that number should be treated as an educational estimate, not a real-world universal speed. If you want the analysis to feel more realistic, I can help you change it to:
-# 1. a lower default for normal users,
-# 2. a configurable value,
-# 3. or separate online vs offline estimate modes.
 
 @dataclass
 class PasswordAnalysis:
